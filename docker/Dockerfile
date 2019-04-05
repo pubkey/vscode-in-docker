@@ -54,5 +54,14 @@ RUN groupadd $GROUP
 RUN useradd -m -G $GROUP $USER
 USER $USER
 
+# vscode-extensions
+RUN /usr/bin/code --install-extension dbaeumer.vscode-eslint
+RUN /usr/bin/code --install-extension naumovs.color-highlight
+RUN /usr/bin/code --install-extension mde.select-highlight-minimap
+RUN /usr/bin/code --install-extension coenraads.bracket-pair-colorizer-2
+RUN /usr/bin/code --install-extension eamodio.gitlens
+RUN /usr/bin/code --install-extension vscode-icons-team.vscode-icons
+RUN /usr/bin/code --list-extensions
+
 COPY entrypoint.bash /usr/bin/entrypoint.bash
 ENTRYPOINT /bin/bash /usr/bin/entrypoint.bash

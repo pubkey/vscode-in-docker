@@ -1,2 +1,10 @@
 {
+    "editor.minimap.showSlider": "always",
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true
+    },
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.iconTheme": "vscode-icons"
 }

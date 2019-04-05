@@ -8,6 +8,8 @@ echo $SCRIPTPATH
 source ${SCRIPTPATH}/config.bash
 
 mkdir -f ${WORKSPACE}/userdata
+# clear logs
+rm -rf userdata/logs/*
 
 # throw if workspace-folder not set
 if [ ${WORKSPACE} = "/" ]; then
