@@ -25,12 +25,6 @@ RUN cp /usr/lib/x86_64-linux-gnu/libxcb.so.1 /usr/share/code/ \
   && sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/share/code/libxcb.so.1 \
   && sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/share/code/libxcb.so.1.1.0
 
-# FIX https://github.com/flathub/com.visualstudio.code/issues/29
-RUN echo 'fs.inotify.max_user_watches=524288' >> /etc/sysctl.conf
-
-# https://github.com/angular-fullstack/generator-angular-fullstack/issues/1538
-RUN apt-get install xdg-utils --fix-missing -y
-
 # install flat plat theme
 run wget 'https://github.com/nana-4/Flat-Plat/releases/download/3.20.20160404/Flat-Plat-3.20.20160404.tar.gz'
 run tar -xf Flat-Plat*
@@ -44,8 +38,15 @@ RUN apt-get install firefox -y
 RUN apt-get install --no-install-recommends firefox
 ENV BROWSER /usr/bin/firefox
 
+# BUGFIXES
+
+# https://github.com/angular-fullstack/generator-angular-fullstack/issues/1538
+RUN apt-get install xdg-utils --fix-missing -y
+
+# fixes broken delete of files
+RUN apt-get install gvfs-bin -y
+
 WORKDIR /workspace
 
-# start vscode
-# ENTRYPOINT ["bash"]
-ENTRYPOINT ["/usr/bin/code", "--verbose", "--user-data-dir", "/userdata"]
+COPY entrypoint.bash /usr/bin/entrypoint.bash
+ENTRYPOINT /bin/bash /usr/bin/entrypoint.bash
