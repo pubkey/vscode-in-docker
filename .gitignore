@@ -1,4 +1,4 @@
-/userdata/*
-!*/userdata/storage.json
-/userdata/User/*
-!*/userdata/User/settings.json
+userdata/*
+!*userdata/User/
+userdata/User/globalStorage
+userdata/User/workspaceStorage
