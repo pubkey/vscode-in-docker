@@ -55,7 +55,7 @@ docker run --name $MODULENAME \
 -v /tmp/.X11-unix:/tmp/.X11-unix \
 -v /dev/shm:/dev/shm \
 -e DISPLAY=${DISPLAY} \
--v $SCRIPTPATH/userdata:/userdata \
+-v $SCRIPTPATH/userdata:/userdata:Z \
  $MODULENAME
 
 # -v $SCRIPTPATH/mapped:/root/.atom \

@@ -48,5 +48,11 @@ RUN apt-get install gvfs-bin -y
 
 WORKDIR /workspace
 
+ENV USER=dev
+ENV GROUP=developers
+RUN groupadd $GROUP
+RUN useradd -m -G $GROUP $USER
+USER $USER
+
 COPY entrypoint.bash /usr/bin/entrypoint.bash
 ENTRYPOINT /bin/bash /usr/bin/entrypoint.bash
