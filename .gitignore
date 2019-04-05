@@ -1,2 +1,4 @@
-/userdata
-!/userdata/storage.json
+/userdata/*
+!*/userdata/storage.json
+/userdata/User/*
+!*/userdata/User/settings.json
