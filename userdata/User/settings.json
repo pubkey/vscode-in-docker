@@ -6,5 +6,6 @@
         "**/node_modules/*/**": true
     },
     "workbench.colorTheme": "Visual Studio Dark",
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.projectDetection.autoReload": true
 }

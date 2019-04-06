@@ -61,6 +61,13 @@ RUN /usr/bin/code --install-extension mde.select-highlight-minimap
 RUN /usr/bin/code --install-extension coenraads.bracket-pair-colorizer-2
 RUN /usr/bin/code --install-extension eamodio.gitlens
 RUN /usr/bin/code --install-extension vscode-icons-team.vscode-icons
+RUN /usr/bin/code --install-extension peterjausovec.vscode-docker
+RUN /usr/bin/code --install-extension donjayamanne.githistory
+RUN /usr/bin/code --install-extension naumovs.theme-oceanicnext
+RUN /usr/bin/code --install-extension pflannery.vscode-versionlens
+RUN /usr/bin/code --install-extension rokoroku.vscode-theme-darcula
+RUN /usr/bin/code --install-extension xabikos.JavaScriptSnippets
+
 RUN /usr/bin/code --list-extensions
 
 COPY entrypoint.bash /usr/bin/entrypoint.bash
