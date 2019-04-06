@@ -70,5 +70,7 @@ RUN /usr/bin/code --install-extension xabikos.JavaScriptSnippets
 
 RUN /usr/bin/code --list-extensions
 
+USER root
+
 COPY entrypoint.bash /usr/bin/entrypoint.bash
 ENTRYPOINT /bin/bash /usr/bin/entrypoint.bash

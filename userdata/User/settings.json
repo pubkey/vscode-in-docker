@@ -7,5 +7,6 @@
     },
     "workbench.colorTheme": "Visual Studio Dark",
     "workbench.iconTheme": "vscode-icons",
-    "vsicons.projectDetection.autoReload": true
+    "vsicons.projectDetection.autoReload": true,
+    "vsicons.dontShowNewVersionMessage": true
 }

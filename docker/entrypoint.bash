@@ -5,4 +5,6 @@ echo "# Max user watches:"
 cat /proc/sys/fs/inotify/max_user_watches
 
 # start vscode
-/usr/bin/code --verbose --user-data-dir /userdata
+su dev -c 'echo "hello from $USER"'
+echo "# start vscode"
+su dev -c '/usr/bin/code --verbose --user-data-dir /userdata'
