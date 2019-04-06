@@ -7,7 +7,7 @@ echo $SCRIPTPATH
 
 source ${SCRIPTPATH}/config.bash
 
-mkdir -f ${WORKSPACE}/userdata
+mkdir -p ${WORKSPACE}/userdata
 # clear logs
 rm -rf userdata/logs/*
 
@@ -34,7 +34,7 @@ fi
 #delete previous container
 echo "delete old container"
 docker stop $MODULENAME
-docker rm -f $MODULENAME
+docker rm $MODULENAME
 
 #build docker image
 echo "delete old image: $MODULENAME"
@@ -52,9 +52,9 @@ echo "IMPORTANT: DONT close this terminal or vscode will close"
 docker run --name $MODULENAME \
 -it \
 --privileged \
---ipc host \
 -v $WORKSPACE:/workspace \
 -v /tmp/.X11-unix:/tmp/.X11-unix \
+-v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket \
 -v /dev/shm:/dev/shm \
 -e DISPLAY=${DISPLAY} \
 -v $SCRIPTPATH/userdata:/userdata:Z \

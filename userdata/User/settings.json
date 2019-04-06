@@ -5,7 +5,7 @@
         "**/.git/subtree-cache/**": true,
         "**/node_modules/*/**": true
     },
-    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.colorTheme": "Darcula",
     "workbench.iconTheme": "vscode-icons",
     "vsicons.projectDetection.autoReload": true,
     "vsicons.dontShowNewVersionMessage": true
