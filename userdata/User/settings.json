@@ -5,8 +5,9 @@
         "**/.git/subtree-cache/**": true,
         "**/node_modules/*/**": true
     },
-    "workbench.colorTheme": "Darcula",
     "workbench.iconTheme": "vscode-icons",
     "vsicons.projectDetection.autoReload": true,
-    "vsicons.dontShowNewVersionMessage": true
+    "vsicons.dontShowNewVersionMessage": true,
+    "html.format.wrapAttributes": "force-expand-multiline",
+    "workbench.colorTheme": "One Dark Pro"
 }

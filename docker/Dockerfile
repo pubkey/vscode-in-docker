@@ -67,7 +67,7 @@ RUN /usr/bin/code --install-extension naumovs.theme-oceanicnext
 RUN /usr/bin/code --install-extension pflannery.vscode-versionlens
 RUN /usr/bin/code --install-extension rokoroku.vscode-theme-darcula
 RUN /usr/bin/code --install-extension xabikos.JavaScriptSnippets
-
+RUN /usr/bin/code --install-extension zhuangtongfa.Material-theme
 RUN /usr/bin/code --list-extensions
 
 USER root
