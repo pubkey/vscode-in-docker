@@ -38,6 +38,17 @@ RUN apt-get install firefox -y
 RUN apt-get install --no-install-recommends firefox
 ENV BROWSER /usr/bin/firefox
 
+# install nodejs and npm
+RUN wget https://nodejs.org/dist/v11.13.0/node-v11.13.0-linux-x64.tar.gz -O /tmp/nodejs.tar.gz
+RUN tar -C /usr/local --strip-components 1 -xzf /tmp/nodejs.tar.gz
+RUN ls -l /usr/local/bin/node
+RUN ls -l /usr/local/bin/npm
+RUN ln -s `which node` /usr/bin/nodejs
+RUN npm i -g npm
+RUN npm cache clean -f
+RUN npm install -g n
+RUN n latest
+
 # BUGFIXES
 
 # https://github.com/angular-fullstack/generator-angular-fullstack/issues/1538
@@ -48,6 +59,12 @@ RUN apt-get install gvfs-bin -y
 
 WORKDIR /workspace
 
+
+# npm modules
+RUN npm install -g eslint
+RUN npm install -g typescript
+
+# change user so vscode does not run as root
 ENV USER=dev
 ENV GROUP=developers
 RUN groupadd $GROUP
@@ -68,8 +85,8 @@ RUN /usr/bin/code --install-extension pflannery.vscode-versionlens
 RUN /usr/bin/code --install-extension rokoroku.vscode-theme-darcula
 RUN /usr/bin/code --install-extension xabikos.JavaScriptSnippets
 RUN /usr/bin/code --install-extension zhuangtongfa.Material-theme
+RUN /usr/bin/code --install-extension octref.vetur
 RUN /usr/bin/code --list-extensions
-
 USER root
 
 COPY entrypoint.bash /usr/bin/entrypoint.bash
