@@ -5,9 +5,12 @@
         "**/.git/subtree-cache/**": true,
         "**/node_modules/*/**": true
     },
+    "typescript.suggest.autoImports": false,
+    "javascript.suggest.autoImports": false,
     "workbench.iconTheme": "vscode-icons",
     "vsicons.projectDetection.autoReload": true,
     "vsicons.dontShowNewVersionMessage": true,
     "html.format.wrapAttributes": "force-expand-multiline",
-    "workbench.colorTheme": "One Dark Pro"
+    "workbench.colorTheme": "One Dark Pro",
+    "window.zoomLevel": -1
 }
