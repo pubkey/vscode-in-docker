@@ -11,7 +11,7 @@ This is a docker-container with the [vscode](https://code.visualstudio.com/)-edi
 ## Install
 1. `git clone https://github.com/pubkey/vscode-in-docker.git`
 2. `cd vscode-in-docker`
-3. Edit the config.bash and include your workspace-folder
+3. Edit the `config.bash` and include your workspace-folder
 4. `sudo bash run.bash`
 5. (It will take about 15 minutes when it runs for the first time.)
 
