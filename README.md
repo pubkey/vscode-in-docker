@@ -5,6 +5,7 @@ This is a docker-container with the [vscode](https://code.visualstudio.com/)-edi
 
 * You can commit your vs-code settings and plugins and share them on different devices
 * You always have your dependencies installed inside the container
+* You can be sure that vs-code cannot access any files on your device
 * You can limit the internet-access to ensure no data will be send to microsoft
 
 ## Install
