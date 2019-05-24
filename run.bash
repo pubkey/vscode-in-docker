@@ -36,7 +36,9 @@ else
   curl -sSL https://get.docker.com/ | sh
 fi
 
-echo "# delete old container"
+echo "# delete old container"	
+docker stop $MODULENAME	
+docker rm $MODULENAME
 
 #build docker image
 echo "delete old image: $MODULENAME"
@@ -44,16 +46,17 @@ echo "delete old image: $MODULENAME"
 echo "building image"
 docker build -t $MODULENAME $SCRIPTPATH/docker
 
-
-#allow xHost
+echo "# allow xHost"
 xhost +
+
 
 #make and run container
 echo "make container"
 echo "IMPORTANT: DONT close this terminal or vscode will close"
+
 docker run --name $MODULENAME \
 -it \
---rm \
+-d \
 --privileged \
 -v $WORKSPACE:/workspace \
 -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -63,7 +66,5 @@ docker run --name $MODULENAME \
 -v $SCRIPTPATH/userdata:/userdata:Z \
  $MODULENAME
 
-# -v $SCRIPTPATH/mapped:/root/.atom \
-
-#disallow xHost
+echo "# disallow xHost"
 xhost -
