@@ -78,7 +78,7 @@ RUN /usr/bin/code --install-extension mde.select-highlight-minimap
 RUN /usr/bin/code --install-extension coenraads.bracket-pair-colorizer-2
 RUN /usr/bin/code --install-extension eamodio.gitlens
 RUN /usr/bin/code --install-extension vscode-icons-team.vscode-icons
-RUN /usr/bin/code --install-extension ext install ms-azuretools.vscode-docker
+RUN /usr/bin/code --install-extension ms-azuretools.vscode-docker
 RUN /usr/bin/code --install-extension donjayamanne.githistory
 RUN /usr/bin/code --install-extension naumovs.theme-oceanicnext
 RUN /usr/bin/code --install-extension pflannery.vscode-versionlens
