@@ -1,5 +1,6 @@
 {
     "editor.minimap.showSlider": "always",
+    "editor.autoClosingBrackets": false,
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
