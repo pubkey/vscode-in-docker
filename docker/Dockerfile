@@ -86,6 +86,7 @@ RUN /usr/bin/code --install-extension rokoroku.vscode-theme-darcula
 RUN /usr/bin/code --install-extension xabikos.JavaScriptSnippets
 RUN /usr/bin/code --install-extension zhuangtongfa.Material-theme
 RUN /usr/bin/code --install-extension octref.vetur
+RUN /usr/bin/code --install-extension oderwat.indent-rainbow
 RUN /usr/bin/code --list-extensions
 USER root
 
