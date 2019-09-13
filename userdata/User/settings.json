@@ -1,4 +1,5 @@
 {
+    "breadcrumbs.enabled": true,
     "editor.minimap.showSlider": "always",
     "editor.autoClosingBrackets": false,
     "files.watcherExclude": {
@@ -7,6 +8,7 @@
         "**/node_modules/*/**": true
     },
     "typescript.suggest.autoImports": false,
+    "typescript.updateImportsOnFileMove.enabled": "never",
     "javascript.suggest.autoImports": false,
     "workbench.iconTheme": "vscode-icons",
     "vsicons.projectDetection.autoReload": true,
