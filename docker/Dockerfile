@@ -90,7 +90,6 @@ RUN /usr/bin/code --install-extension oderwat.indent-rainbow
 RUN /usr/bin/code --install-extension tomoki1207.pdf
 RUN /usr/bin/code --install-extension ms-vscode.vscode-typescript-tslint-plugin
 RUN /usr/bin/code --install-extension mikebovenlander.formate
-RUN /usr/bin/code --install-extension amatiasq.sort-imports
 RUN /usr/bin/code --install-extension redhat.vscode-yaml
 RUN /usr/bin/code --list-extensions
 USER root
