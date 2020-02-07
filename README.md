@@ -17,4 +17,4 @@ This is a docker-container with the [vscode](https://code.visualstudio.com/)-edi
 
 ## ( optional to start the container without root )
 6. `sudo usermod -a -G docker alice` // replace alice with your username
-7. restart your system
+7. logout of your user session, then log back in
