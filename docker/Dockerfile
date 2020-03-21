@@ -1,9 +1,10 @@
-FROM ubuntu:18.10
+FROM ubuntu:19.10
 
 # https://github.com/cmiles74/docker-vscode
 # https://hub.docker.com/r/joengenduvel/docker-vscode/dockerfile
 
 ENV DISPLAY=10.0.75.1:0.0
+ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
  && apt-get install -y curl apt-transport-https libgtk2.0-0 libxss1 libasound2 xauth x11-apps dbus git gpg
