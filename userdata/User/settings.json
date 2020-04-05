@@ -16,5 +16,6 @@
     "html.format.wrapAttributes": "force-expand-multiline",
     "workbench.colorTheme": "One Dark Pro",
     "window.zoomLevel": -1,
-    "typescript.updateImportsOnFileMove.enabled": "never"
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "editor.minimap.size": "fill"
 }
