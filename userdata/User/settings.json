@@ -15,6 +15,6 @@
     "vsicons.dontShowNewVersionMessage": true,
     "html.format.wrapAttributes": "force-expand-multiline",
     "workbench.colorTheme": "One Dark Pro",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
     "typescript.updateImportsOnFileMove.enabled": "never"
 }
