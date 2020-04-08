@@ -17,5 +17,8 @@
     "workbench.colorTheme": "One Dark Pro",
     "window.zoomLevel": -1,
     "typescript.updateImportsOnFileMove.enabled": "never",
-    "editor.minimap.size": "fill"
+    "editor.minimap.size": "fill",
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single"
+
 }
