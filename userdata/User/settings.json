@@ -19,6 +19,7 @@
     "typescript.updateImportsOnFileMove.enabled": "never",
     "editor.minimap.size": "fill",
     "javascript.preferences.quoteStyle": "single",
-    "typescript.preferences.quoteStyle": "single"
+    "typescript.preferences.quoteStyle": "single",
+    "files.insertFinalNewline": true
 
 }
