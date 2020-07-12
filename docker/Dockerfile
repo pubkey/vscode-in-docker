@@ -27,12 +27,12 @@ RUN cp /usr/lib/x86_64-linux-gnu/libxcb.so.1 /usr/share/code/ \
   && sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/share/code/libxcb.so.1.1.0
 
 # install flat plat theme
-run wget 'https://github.com/nana-4/Flat-Plat/releases/download/3.20.20160404/Flat-Plat-3.20.20160404.tar.gz'
-run tar -xf Flat-Plat*
-run mv Flat-Plat /usr/share/themes
-run rm Flat-Plat*gz
-run mv /usr/share/themes/Default /usr/share/themes/Default.bak
-run ln -s /usr/share/themes/Flat-Plat /usr/share/themes/Default
+RUN wget 'https://github.com/nana-4/Flat-Plat/releases/download/3.20.20160404/Flat-Plat-3.20.20160404.tar.gz'
+RUN tar -xf Flat-Plat*
+RUN mv Flat-Plat /usr/share/themes
+RUN rm Flat-Plat*gz
+RUN mv /usr/share/themes/Default /usr/share/themes/Default.bak
+RUN ln -s /usr/share/themes/Flat-Plat /usr/share/themes/Default
 
 # install firefox
 RUN apt-get install firefox -y
@@ -49,6 +49,14 @@ RUN npm i -g npm
 RUN npm cache clean -f
 RUN npm install -g n
 RUN n latest
+
+# install python (needed for some vscode plugins like python formater)
+RUN apt-get install python3.6 -y
+RUN python3 --version
+RUN apt-get update && apt-get install python3-pip -y
+RUN pip3 install pylint
+RUN pip3 install autopep8
+
 
 # BUGFIXES
 
