@@ -1,14 +1,14 @@
 {
     "breadcrumbs.enabled": true,
     "editor.minimap.showSlider": "always",
-    "editor.autoClosingBrackets": false,
+    "editor.autoClosingBrackets": "never",
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
         "**/node_modules/*/**": true
     },
+    "update.mode": "none",
     "typescript.suggest.autoImports": false,
-    "typescript.updateImportsOnFileMove.enabled": "never",
     "javascript.suggest.autoImports": false,
     "workbench.iconTheme": "vscode-icons",
     "vsicons.projectDetection.autoReload": true,
@@ -20,6 +20,7 @@
     "editor.minimap.size": "fill",
     "javascript.preferences.quoteStyle": "single",
     "typescript.preferences.quoteStyle": "single",
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "javascript.updateImportsOnFileMove.enabled": "never"
 
 }
