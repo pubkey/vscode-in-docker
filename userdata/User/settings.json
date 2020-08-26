@@ -21,6 +21,6 @@
     "javascript.preferences.quoteStyle": "single",
     "typescript.preferences.quoteStyle": "single",
     "files.insertFinalNewline": true,
-    "javascript.updateImportsOnFileMove.enabled": "never"
-
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "update.mode": "manual"
 }
