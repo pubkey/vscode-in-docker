@@ -100,6 +100,7 @@ RUN /usr/bin/code --install-extension tomoki1207.pdf
 RUN /usr/bin/code --install-extension ms-vscode.vscode-typescript-tslint-plugin
 RUN /usr/bin/code --install-extension mikebovenlander.formate
 RUN /usr/bin/code --install-extension redhat.vscode-yaml
+RUN /usr/bin/code --install-extension william-voyek.vscode-nginx
 
 ## python
 RUN /usr/bin/code --install-extension ms-python.python
