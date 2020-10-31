@@ -7,7 +7,6 @@
         "**/.git/subtree-cache/**": true,
         "**/node_modules/*/**": true
     },
-    "update.mode": "none",
     "typescript.suggest.autoImports": false,
     "javascript.suggest.autoImports": false,
     "workbench.iconTheme": "vscode-icons",
@@ -22,5 +21,7 @@
     "typescript.preferences.quoteStyle": "single",
     "files.insertFinalNewline": true,
     "javascript.updateImportsOnFileMove.enabled": "never",
-    "update.mode": "manual"
+    "update.mode": "manual",
+    "explorer.confirmDelete": false,
+    "explorer.autoReveal": false
 }

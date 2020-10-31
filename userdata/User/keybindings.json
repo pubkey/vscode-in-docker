@@ -1,0 +1,5 @@
+// Place your key bindings in this file to override the defaults
+[
+    // @link https://stackoverflow.com/a/42493479/3443137
+    { "key": "ctrl+e", "command": "workbench.files.action.showActiveFileInExplorer" }
+]
