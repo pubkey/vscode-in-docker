@@ -106,6 +106,9 @@ RUN /usr/bin/code --install-extension redhat.vscode-yaml
 RUN /usr/bin/code --install-extension william-voyek.vscode-nginx
 RUN /usr/bin/code --install-extension ms-python.python
 
+# angular
+RUN /usr/bin/code --install-extension angular.ng-template
+
 RUN /usr/bin/code --list-extensions
 
 USER root
