@@ -28,4 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: build the container
         working-directory: ./docker
-        run: docker build -t vscode-container .
+        run: docker build -t vscode .
+
+      - name: show available vscode versions
+        run: bash show-vs-code-versions.bash
