@@ -31,4 +31,4 @@ jobs:
         run: docker build -t vscode .
 
       - name: show available vscode versions
-        run: bash show-vs-code-versions.bash
+        run: bash ./show-vscode-versions.bash
