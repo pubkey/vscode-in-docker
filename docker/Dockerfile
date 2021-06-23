@@ -11,10 +11,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 ##
 
 RUN apt-get update \
- && apt-get install -y curl apt-transport-https libgtk2.0-0 libxss1 libasound2 xauth x11-apps dbus git gpg
-
-RUN apt-get install libx11-xcb-dev -y
-RUN apt-get install wget -y
+ && apt-get install -y curl apt-transport-https libgtk2.0-0 libxss1 libasound2 xauth x11-apps dbus git gpg libx11-xcb-dev wget gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils
 
 RUN mkdir /var/run/dbus
 
@@ -24,7 +21,7 @@ RUN apt-get install --no-install-recommends firefox
 ENV BROWSER /usr/bin/firefox
 
 # install nodejs and npm
-RUN wget https://nodejs.org/dist/v11.13.0/node-v11.13.0-linux-x64.tar.gz -O /tmp/nodejs.tar.gz
+RUN wget https://nodejs.org/dist/v14.17.1/node-v14.17.1-linux-x64.tar.gz -O /tmp/nodejs.tar.gz
 RUN tar -C /usr/local --strip-components 1 -xzf /tmp/nodejs.tar.gz
 RUN ls -l /usr/local/bin/node
 RUN ls -l /usr/local/bin/npm
@@ -45,12 +42,13 @@ RUN pip3 install pylint
 RUN pip3 install autopep8
 
 # install flat plat theme
-RUN wget 'https://github.com/nana-4/Flat-Plat/releases/download/3.20.20160404/Flat-Plat-3.20.20160404.tar.gz'
-RUN tar -xf Flat-Plat*
-RUN mv Flat-Plat /usr/share/themes
-RUN rm Flat-Plat*gz
-RUN mv /usr/share/themes/Default /usr/share/themes/Default.bak
-RUN ln -s /usr/share/themes/Flat-Plat /usr/share/themes/Default
+# TODO I had to comment this out because it broke scolling inside of the vscode editor
+#RUN wget 'https://github.com/nana-4/Flat-Plat/releases/download/3.20.20160404/Flat-Plat-3.20.20160404.tar.gz'
+#RUN tar -xf Flat-Plat*
+#RUN mv Flat-Plat /usr/share/themes
+#RUN rm Flat-Plat*gz
+#RUN mv /usr/share/themes/Default /usr/share/themes/Default.bak
+#RUN ln -s /usr/share/themes/Flat-Plat /usr/share/themes/Default
 
 ##
 ## /ubuntu stuff
@@ -82,6 +80,7 @@ ENV GROUP=developers
 RUN groupadd $GROUP
 RUN useradd -m -G $GROUP $USER
 USER $USER
+
 
 # vscode-extensions
 RUN /usr/bin/code --install-extension dbaeumer.vscode-eslint
