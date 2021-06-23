@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: show available vscode versions
-        run: bash ./show-vscode-versions.bash  build:
+        run: bash ./show-vscode-versions.bash
 
   build:
     runs-on: ubuntu-20.04
