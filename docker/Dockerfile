@@ -68,7 +68,7 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > mic
 RUN apt-cache policy code
 
 
-RUN apt-get update && apt-get install -y code=1.48.2-1598353430 \
+RUN apt-get update && apt-get install -y code=1.57.1-1623937013 \
   && apt-get install -f
 
 RUN cp /usr/lib/x86_64-linux-gnu/libxcb.so.1 /usr/share/code/ \
