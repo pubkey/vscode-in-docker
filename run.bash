@@ -26,7 +26,7 @@ fi
 
 MODULENAME="vscode"
 
-#install docker if not done before
+# install docker if not done before
 echo "try install docker if not exists"
 if which docker >/dev/null; then
     echo "docker exists: wont install"
@@ -37,7 +37,8 @@ else
 fi
 
 echo "# delete old container"	
-docker stop $MODULENAME	
+# use the kill command instead of stop to make it faster
+docker kill $MODULENAME	
 docker rm $MODULENAME
 
 #build docker image
