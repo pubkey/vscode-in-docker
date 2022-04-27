@@ -125,6 +125,10 @@ RUN apt-get install xdg-utils --fix-missing -y
 # RUN apt-get update && apt-get install gvfs-bin -y
 
 
+# https://www.codegrepper.com/code-examples/shell/Writing+login+information+to+the+keychain+failed+with+error+%27The+name+org.freedesktop.secrets+was+not+provided+by
+RUN apt-get install gnome-keyring -y
+RUN apt-get install libsecret-1-dev -y
+
 
 WORKDIR /workspace
 
