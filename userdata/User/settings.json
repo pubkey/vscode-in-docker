@@ -23,5 +23,7 @@
     "javascript.updateImportsOnFileMove.enabled": "never",
     "update.mode": "manual",
     "explorer.confirmDelete": false,
-    "explorer.autoReveal": false
+    "explorer.autoReveal": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs":"active"
 }
