@@ -21,7 +21,7 @@ RUN apt-get install --no-install-recommends firefox
 ENV BROWSER /usr/bin/firefox
 
 # install nodejs and npm
-RUN wget https://nodejs.org/dist/v14.17.1/node-v14.17.1-linux-x64.tar.gz -O /tmp/nodejs.tar.gz
+RUN wget https://nodejs.org/dist/v18.0.0/node-v18.0.0-linux-x64.tar.gz -O /tmp/nodejs.tar.gz
 RUN tar -C /usr/local --strip-components 1 -xzf /tmp/nodejs.tar.gz
 RUN ls -l /usr/local/bin/node
 RUN ls -l /usr/local/bin/npm
