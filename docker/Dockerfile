@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 # https://github.com/cmiles74/docker-vscode
 # https://hub.docker.com/r/joengenduvel/docker-vscode/dockerfile
