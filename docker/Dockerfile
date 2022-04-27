@@ -28,7 +28,7 @@ RUN ls -l /usr/local/bin/npm
 RUN ln -s `which node` /usr/bin/nodejs
 RUN npm i -g npm
 RUN npm install -g n
-RUN n latest
+
 
 # npm modules
 RUN npm install -g eslint
