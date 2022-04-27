@@ -63,7 +63,7 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > mic
   && sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 
 # show available vscode versions
-RUN apt-cache policy code
+RUN echo "vs-code versions:" && apt-cache policy code
 
 
 RUN apt-get update && apt-get install -y code=1.57.1-1623937013 \
@@ -86,7 +86,6 @@ USER $USER
 RUN /usr/bin/code --install-extension dbaeumer.vscode-eslint
 RUN /usr/bin/code --install-extension naumovs.color-highlight
 RUN /usr/bin/code --install-extension mde.select-highlight-minimap
-RUN /usr/bin/code --install-extension coenraads.bracket-pair-colorizer-2
 RUN /usr/bin/code --install-extension eamodio.gitlens
 RUN /usr/bin/code --install-extension vscode-icons-team.vscode-icons
 RUN /usr/bin/code --install-extension ms-azuretools.vscode-docker
@@ -123,7 +122,7 @@ USER root
 RUN apt-get install xdg-utils --fix-missing -y
 
 # fixes broken delete of files
-RUN apt-get update && apt-get install gvfs-bin -y
+# RUN apt-get update && apt-get install gvfs-bin -y
 
 
 
