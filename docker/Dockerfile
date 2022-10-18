@@ -41,6 +41,20 @@ RUN apt-get update && apt-get install python3-pip -y
 RUN pip3 install pylint
 RUN pip3 install autopep8
 
+## install dart, required for dart formatting
+RUN apt-get install software-properties-common -y
+RUN apt-get update
+RUN apt-add-repository ppa:dartsim/ppa
+RUN apt-get update
+RUN apt-get install libdart6-dev -y
+RUN apt-get install libdart6-all-dev -y
+
+# install flutter
+# @link https://docs.flutter.dev/get-started/install/linux
+RUN wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.3.4-stable.tar.xz -O /tmp/flutter_linux.tar.xz
+RUN cd /usr/local && tar xf /tmp/flutter_linux.tar.xz && export PATH="$PATH:`pwd`/flutter/bin"
+
+
 # install flat plat theme
 # TODO I had to comment this out because it broke scolling inside of the vscode editor
 #RUN wget 'https://github.com/nana-4/Flat-Plat/releases/download/3.20.20160404/Flat-Plat-3.20.20160404.tar.gz'
@@ -66,7 +80,7 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > mic
 RUN echo "vs-code versions:" && apt-cache policy code
 
 
-RUN apt-get update && apt-get install -y code=1.66.2-1649664567 \
+RUN apt-get update && apt-get install -y code=1.72.2-1665614327 \
   && apt-get install -f
 
 RUN cp /usr/lib/x86_64-linux-gnu/libxcb.so.1 /usr/share/code/ \
@@ -103,6 +117,8 @@ RUN /usr/bin/code --install-extension mikebovenlander.formate
 RUN /usr/bin/code --install-extension redhat.vscode-yaml
 RUN /usr/bin/code --install-extension william-voyek.vscode-nginx
 RUN /usr/bin/code --install-extension ms-python.python
+RUN /usr/bin/code --install-extension dart-code.dart-code0
+RUN /usr/bin/code --install-extension dart-code.flutter
 
 # angular
 RUN /usr/bin/code --install-extension angular.ng-template
@@ -110,6 +126,7 @@ RUN /usr/bin/code --install-extension angular.ng-template
 RUN /usr/bin/code --list-extensions
 
 USER root
+
 
 ##
 ## /vscode stuff

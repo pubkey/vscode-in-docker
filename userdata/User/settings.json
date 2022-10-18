@@ -14,7 +14,6 @@
     "vsicons.dontShowNewVersionMessage": true,
     "html.format.wrapAttributes": "force-expand-multiline",
     "workbench.colorTheme": "One Dark Pro",
-    "window.zoomLevel": -1,
     "typescript.updateImportsOnFileMove.enabled": "never",
     "editor.minimap.size": "fill",
     "javascript.preferences.quoteStyle": "single",
@@ -25,5 +24,21 @@
     "explorer.confirmDelete": false,
     "explorer.autoReveal": false,
     "editor.bracketPairColorization.enabled": true,
-    "editor.guides.bracketPairs":"active"
+    "editor.guides.bracketPairs": "active",
+    "github.gitAuthentication": false,
+    "git.terminalAuthentication": false,
+    "settingsSync.keybindingsPerPlatform": false,
+    "git.enableStatusBarSync": false,
+    "git.confirmSync": false,
+    "[less]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[dart]": {
+        "editor.defaultFormatter": "Dart-Code.dart-code"
+    },
+    "window.zoomLevel": -1,
+    "dart.flutterSdkPath": "/usr/local/flutter"
 }
