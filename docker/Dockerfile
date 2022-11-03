@@ -119,6 +119,7 @@ RUN /usr/bin/code --install-extension william-voyek.vscode-nginx
 RUN /usr/bin/code --install-extension ms-python.python
 RUN /usr/bin/code --install-extension dart-code.dart-code0
 RUN /usr/bin/code --install-extension dart-code.flutter
+RUN /usr/bin/code --install-extension redhat.vscode-xml
 
 # angular
 RUN /usr/bin/code --install-extension angular.ng-template
