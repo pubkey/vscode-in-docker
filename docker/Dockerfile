@@ -21,7 +21,8 @@ RUN apt-get install --no-install-recommends firefox
 ENV BROWSER /usr/bin/firefox
 
 # install nodejs and npm
-RUN wget https://nodejs.org/dist/v18.0.0/node-v18.0.0-linux-x64.tar.gz -O /tmp/nodejs.tar.gz
+# https://nodejs.org/en/download/releases/
+RUN wget https://nodejs.org/dist/v18.12.1/node-v18.12.1-linux-x64.tar.gz -O /tmp/nodejs.tar.gz
 RUN tar -C /usr/local --strip-components 1 -xzf /tmp/nodejs.tar.gz
 RUN ls -l /usr/local/bin/node
 RUN ls -l /usr/local/bin/npm
@@ -79,8 +80,8 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > mic
 # show available vscode versions
 RUN echo "vs-code versions:" && apt-cache policy code
 
-
-RUN apt-get update && apt-get install -y code=1.72.2-1665614327 \
+## Install vscode in the specifc version
+RUN apt-get update && apt-get install -y code=1.74.2-1671533413 \
   && apt-get install -f
 
 RUN cp /usr/lib/x86_64-linux-gnu/libxcb.so.1 /usr/share/code/ \
@@ -117,9 +118,9 @@ RUN /usr/bin/code --install-extension mikebovenlander.formate
 RUN /usr/bin/code --install-extension redhat.vscode-yaml
 RUN /usr/bin/code --install-extension william-voyek.vscode-nginx
 RUN /usr/bin/code --install-extension ms-python.python
-RUN /usr/bin/code --install-extension dart-code.dart-code
-RUN /usr/bin/code --install-extension dart-code.flutter
 RUN /usr/bin/code --install-extension redhat.vscode-xml
+# RUN /usr/bin/code --install-extension dart-code.dart-code
+# RUN /usr/bin/code --install-extension dart-code.flutter
 
 # angular
 RUN /usr/bin/code --install-extension angular.ng-template
