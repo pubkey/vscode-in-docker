@@ -119,16 +119,23 @@ RUN /usr/bin/code --install-extension redhat.vscode-yaml
 RUN /usr/bin/code --install-extension william-voyek.vscode-nginx
 RUN /usr/bin/code --install-extension ms-python.python
 RUN /usr/bin/code --install-extension redhat.vscode-xml
+RUN /usr/bin/code --install-extension angular.ng-template
+RUN /usr/bin/code --install-extension denoland.vscode-deno
 # RUN /usr/bin/code --install-extension dart-code.dart-code
 # RUN /usr/bin/code --install-extension dart-code.flutter
-
-# angular
-RUN /usr/bin/code --install-extension angular.ng-template
 
 RUN /usr/bin/code --list-extensions
 
 USER root
 
+
+## install deno cli
+RUN apt-get install unzip -y
+RUN echo "aa"
+RUN curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL=/usr/local sh
+RUN export DENO_INSTALL="/root/.deno"
+RUN export PATH="$DENO_INSTALL/bin:$PATH"
+RUN deno --version
 
 ##
 ## /vscode stuff

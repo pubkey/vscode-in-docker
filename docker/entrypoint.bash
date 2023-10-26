@@ -9,6 +9,10 @@ sysctl -p /etc/sysctl.conf
 echo "# Max user watches:"
 cat /proc/sys/fs/inotify/max_user_watches
 
+
+# test deno
+deno --version
+
 #bash
 echo "# start vscode as $USER"
 whoami
