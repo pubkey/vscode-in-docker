@@ -36,7 +36,7 @@ RUN npm install -g eslint
 RUN npm install -g typescript
 
 # install python (needed for some vscode plugins like python formater)
-RUN apt-get install python3.6 -y
+RUN apt-get install python3 -y
 RUN python3 --version
 RUN apt-get update && apt-get install python3-pip -y
 RUN pip3 install pylint
@@ -81,7 +81,7 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > mic
 RUN echo "vs-code versions:" && apt-cache policy code
 
 ## Install vscode in the specifc version
-RUN apt-get update && apt-get install -y code=1.74.2-1671533413 \
+RUN apt-get update && apt-get install -y code=1.83.0-1696350811 \
   && apt-get install -f
 
 RUN cp /usr/lib/x86_64-linux-gnu/libxcb.so.1 /usr/share/code/ \
