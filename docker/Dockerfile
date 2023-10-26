@@ -22,7 +22,7 @@ ENV BROWSER /usr/bin/firefox
 
 # install nodejs and npm
 # https://nodejs.org/en/download/releases/
-RUN wget https://nodejs.org/dist/v18.12.1/node-v18.12.1-linux-x64.tar.gz -O /tmp/nodejs.tar.gz
+RUN wget https://nodejs.org/dist/v20.9.0/node-v20.9.0-linux-x64.tar.gz -O /tmp/nodejs.tar.gz
 RUN tar -C /usr/local --strip-components 1 -xzf /tmp/nodejs.tar.gz
 RUN ls -l /usr/local/bin/node
 RUN ls -l /usr/local/bin/npm
