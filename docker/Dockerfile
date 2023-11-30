@@ -42,8 +42,16 @@ RUN apt-get update && apt-get install python3-pip -y
 RUN pip3 install pylint
 RUN pip3 install autopep8
 
+## install deno cli
+RUN apt-get install unzip -y
+RUN curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL=/usr/local sh
+RUN export DENO_INSTALL="/root/.deno"
+RUN export PATH="$DENO_INSTALL/bin:$PATH"
+RUN deno --version
+
+
 ## install dart, required for dart formatting
-RUN apt-get install software-properties-common -y
+RUN apt-get update && apt-get install software-properties-common -y
 RUN apt-get update
 RUN apt-add-repository ppa:dartsim/ppa
 RUN apt-get update
@@ -120,7 +128,7 @@ RUN /usr/bin/code --install-extension william-voyek.vscode-nginx
 RUN /usr/bin/code --install-extension ms-python.python
 RUN /usr/bin/code --install-extension redhat.vscode-xml
 RUN /usr/bin/code --install-extension angular.ng-template
-RUN /usr/bin/code --install-extension denoland.vscode-deno
+# RUN /usr/bin/code --install-extension denoland.vscode-deno
 # RUN /usr/bin/code --install-extension dart-code.dart-code
 # RUN /usr/bin/code --install-extension dart-code.flutter
 
@@ -128,14 +136,6 @@ RUN /usr/bin/code --list-extensions
 
 USER root
 
-
-## install deno cli
-RUN apt-get install unzip -y
-RUN echo "aa"
-RUN curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL=/usr/local sh
-RUN export DENO_INSTALL="/root/.deno"
-RUN export PATH="$DENO_INSTALL/bin:$PATH"
-RUN deno --version
 
 ##
 ## /vscode stuff
