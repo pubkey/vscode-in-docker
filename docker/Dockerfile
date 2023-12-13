@@ -22,7 +22,7 @@ ENV BROWSER /usr/bin/firefox
 
 # install nodejs and npm
 # https://nodejs.org/en/download/releases/
-RUN wget https://nodejs.org/dist/v20.9.0/node-v20.9.0-linux-x64.tar.gz -O /tmp/nodejs.tar.gz
+RUN wget https://nodejs.org/dist/v20.10.0/node-v20.10.0-linux-x64.tar.gz -O /tmp/nodejs.tar.gz
 RUN tar -C /usr/local --strip-components 1 -xzf /tmp/nodejs.tar.gz
 RUN ls -l /usr/local/bin/node
 RUN ls -l /usr/local/bin/npm
@@ -30,6 +30,8 @@ RUN ln -s `which node` /usr/bin/nodejs
 RUN npm i -g npm
 RUN npm install -g n
 
+# npm autocomplete https://docs.npmjs.com/cli/v6/commands/npm-completion
+RUN npm completion >> ~/.bashrc
 
 # npm modules
 RUN npm install -g eslint
@@ -89,7 +91,7 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > mic
 RUN echo "vs-code versions:" && apt-cache policy code
 
 ## Install vscode in the specifc version
-RUN apt-get update && apt-get install -y code=1.83.0-1696350811 \
+RUN apt-get update && apt-get install -y code=1.84.2-1699528352 \
   && apt-get install -f
 
 RUN cp /usr/lib/x86_64-linux-gnu/libxcb.so.1 /usr/share/code/ \
