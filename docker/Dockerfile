@@ -91,7 +91,7 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > mic
 RUN echo "vs-code versions:" && apt-cache policy code
 
 ## Install vscode in the specifc version
-RUN apt-get update && apt-get install -y code=1.84.2-1699528352 \
+RUN apt-get update && apt-get install -y code=1.88.1-1712771838 \
   && apt-get install -f
 
 RUN cp /usr/lib/x86_64-linux-gnu/libxcb.so.1 /usr/share/code/ \
