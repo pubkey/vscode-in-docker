@@ -2,3 +2,4 @@ userdata/*
 !*userdata/User/
 userdata/User/globalStorage
 userdata/User/workspaceStorage
+userdata/User/History

@@ -39,6 +39,7 @@
     "[dart]": {
         "editor.defaultFormatter": "Dart-Code.dart-code"
     },
-    "window.zoomLevel": -1,
-    "dart.flutterSdkPath": "/usr/local/flutter"
+    "dart.flutterSdkPath": "/usr/local/flutter",
+    "window.zoomLevel": 1,
+    "typescript.preferences.includePackageJsonAutoImports": "on"
 }
