@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
-#add your workspace-folder here. From vscode you can use it via /workspace
+# Add your workspace-folder here. From vscode you can use it via /workspace
+# For example in linux you would set:
+# WORKSPACE="/home/alice/workspace"
 WORKSPACE=""
